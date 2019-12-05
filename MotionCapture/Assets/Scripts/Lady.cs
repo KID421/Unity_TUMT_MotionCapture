@@ -140,5 +140,8 @@ public class Lady : MonoBehaviour
     private void Dead()
     {
         ani.SetBool(parDead, true);
+        // this 此腳本
+        // enabled 啟動
+        this.enabled = false;
     }
 }
