@@ -9,6 +9,8 @@ public class Lady : MonoBehaviour
     public float speed = 1.5f;
     [Header("旋轉速度"), Range(1f, 100f)]
     public float turn = 1.5f;
+    [Header("血量"), Range(100, 500)]
+    public float hp = 100;
 
     [Header("動畫控制器：參數名稱")]
     public string parRun = "跑步開關";
@@ -128,6 +130,8 @@ public class Lady : MonoBehaviour
     private void Hurt()
     {
         ani.SetTrigger(parDam);
+        hp -= 20;
+        if (hp <= 0) Dead();
     }
 
     /// <summary>
